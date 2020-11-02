@@ -97,6 +97,10 @@ public class ResultsService implements ResultsServiceInterface {
     public GeneralResultsDTO getAccumulatedResults() {
         List<Results> allResults = resultsRepository.findAll();
 
+        if(allResults.isEmpty()) {
+            throw  new NotFoundException("Sem resultados encontrados");
+        }
+
         int accumulatedNumberOfQuestions = allResults.stream()
                 .mapToInt(Results::getTotalNumberOfQuestions)
                 .sum();
