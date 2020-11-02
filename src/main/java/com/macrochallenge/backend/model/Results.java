@@ -21,7 +21,7 @@ public class Results {
     @ManyToOne
     private Test test;
 
-    @OneToMany(mappedBy = "result")
+    @OneToMany(mappedBy = "result", cascade = CascadeType.ALL)
     private List<ResultsPerTopic> resultsPerTopics = new ArrayList<>();
 
     @NonNull

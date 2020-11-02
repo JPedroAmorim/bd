@@ -2,6 +2,7 @@ package com.macrochallenge.backend.controllers;
 
 import com.macrochallenge.backend.model.Question;
 import com.macrochallenge.backend.model.dto.TestDTO;
+import com.macrochallenge.backend.model.dto.TestResultDTO;
 import com.macrochallenge.backend.service.interfaces.TestServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,5 +26,10 @@ public class TestController {
     @GetMapping
     public List<Question> getTestQuestions(@RequestParam String testName, @RequestParam String testYear) {
         return testService.getTestQuestions(new TestDTO(testName, testYear));
+    }
+
+    @GetMapping("/test-result")
+    public TestResultDTO getTestResult(@RequestParam String testName, @RequestParam String testYear) {
+        return testService.getTestResult(new TestDTO(testName, testYear));
     }
 }
