@@ -82,7 +82,7 @@ public class ResultsService implements ResultsServiceInterface {
 
             ResultsPerTopic resultsPerTopic = new ResultsPerTopic(resultsEntity, resultsPerTopicDTO.getTopic(),
                     totalPercentageOfCorrectAnswersForTopic, totalNumberOfCorrectAnswersForTopic,
-                    totalNumberOfAnsweredQuestionsForTopic, totalNumberOfQuestionsForTopic);
+                    totalNumberOfQuestionsForTopic, totalNumberOfAnsweredQuestionsForTopic);
 
             resultsPerTopicList.add(resultsPerTopic);
         }
