@@ -109,8 +109,8 @@ public class ResultsService implements ResultsServiceInterface {
                 .mapToInt(Results::getTotalNumberOfCorrectAnswers)
                 .sum();
 
-        Double totalPercentageOfCorrectAnswers = round((double) accumulatedNumberOfQuestions
-                / (double) accumulatedNumberOfCorrectAnswers);
+        Double totalPercentageOfCorrectAnswers = round((double) accumulatedNumberOfCorrectAnswers
+                / (double) accumulatedNumberOfQuestions);
 
         Map<String, ResultsPerTopicDTO> resultsPerTopicDTOMap = new HashMap<>();
 
