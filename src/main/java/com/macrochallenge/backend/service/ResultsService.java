@@ -105,6 +105,10 @@ public class ResultsService implements ResultsServiceInterface {
                 .mapToInt(Results::getTotalNumberOfQuestions)
                 .sum();
 
+        int accumulatedNumberOfAnsweredQuestions = allResults.stream()
+                .mapToInt(Results::getTotalNumberOfAnsweredQuestions)
+                .sum();
+
         int accumulatedNumberOfCorrectAnswers = allResults.stream()
                 .mapToInt(Results::getTotalNumberOfCorrectAnswers)
                 .sum();
@@ -169,7 +173,7 @@ public class ResultsService implements ResultsServiceInterface {
 
         GeneralResultsDTO generalResultsDTO = new GeneralResultsDTO(String.valueOf(totalPercentageOfCorrectAnswers),
                 String.valueOf(accumulatedNumberOfQuestions), String.valueOf(accumulatedNumberOfCorrectAnswers),
-                resultsPerTopicDTOList);
+                resultsPerTopicDTOList, String.valueOf(accumulatedNumberOfAnsweredQuestions));
 
 
         return  generalResultsDTO;

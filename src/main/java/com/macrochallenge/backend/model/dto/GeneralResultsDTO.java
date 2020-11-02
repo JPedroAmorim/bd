@@ -18,4 +18,7 @@ public class GeneralResultsDTO {
 
     @NonNull
     private List<ResultsPerTopicDTO> resultsPerTopic;
+
+    @NonNull
+    private String totalNumberOfAnsweredQuestions;
 }
