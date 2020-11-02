@@ -140,13 +140,18 @@ public class ResultsService implements ResultsServiceInterface {
                     entry.setTotalNumberOfAnsweredQuestions(String.valueOf(recalculatedValueForAnsweredQuestions));
                     entry.setTotalNumberOfQuestions(String.valueOf(recalculatedValueForTotalNumberOfQuestions));
 
-                    Double totalPercentageOfCorrectAnswersForTopic = round((recalculatedValueForCorrectAnswers
-                            / recalculatedValueForTotalNumberOfQuestions));
+                    double totalPercentageOfCorrectAnswersForTopic = 0.0;
+
+                    if (recalculatedValueForTotalNumberOfQuestions != 0) {
+                        totalPercentageOfCorrectAnswersForTopic = (recalculatedValueForCorrectAnswers
+                                / recalculatedValueForTotalNumberOfQuestions);
+                    }
+
+                    totalPercentageOfCorrectAnswers = round(totalPercentageOfCorrectAnswers);
 
                     entry.setTotalPercentageOfCorrectAnswers(String.valueOf(totalPercentageOfCorrectAnswersForTopic));
 
                     resultsPerTopicDTOMap.put(resultsPerTopic.getTopic(), entry);
-
                 }
             }
         }
