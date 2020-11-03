@@ -152,10 +152,10 @@ public class ResultsService implements ResultsServiceInterface {
 
                     if (recalculatedValueForTotalNumberOfQuestions != 0) {
                         totalPercentageOfCorrectAnswersForTopic = (recalculatedValueForCorrectAnswers
-                                / recalculatedValueForTotalNumberOfQuestions);
+                                / recalculatedValueForTotalNumberOfQuestions) * 100;
                     }
 
-                    totalPercentageOfCorrectAnswers = round(totalPercentageOfCorrectAnswers);
+                    totalPercentageOfCorrectAnswers = round(totalPercentageOfCorrectAnswers) * 100;
 
                     entry.setTotalPercentageOfCorrectAnswers(String.valueOf(totalPercentageOfCorrectAnswersForTopic));
 
