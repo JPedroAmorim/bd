@@ -1,15 +1,7 @@
-INSERT INTO school(id, location, name) values (1,'Bauru, Guarantinguetá e Jaboticabal (SP)', 'CTI');
-INSERT INTO test(id, name, year, school_id) values (17, 'cti2019', 2019, 1);
 
-INSERT INTO school(id, location, name) values (1,'Bauru, Guarantinguetá e Jaboticabal (SP)', 'CTI');
-INSERT INTO test(id, name, year, school_id) values (17, 'cti2019', 2019, 1);
-
-INSERT INTO school(id, location, name) values (2,'Campinas (SP)', 'Cotuca');
+INSERT INTO school(id, location, name, school_logo_url) values (2,'Campinas (SP)', 'Cotuca', 'https://i.imgur.com/XvmtJlL.png');
 INSERT INTO test(id, name, year, school_id) values (71, 'cotuca2020', 2020, 2);
-INSERT INTO test(id, name, year, school_id) values (36, 'cotuca2019', 2019, 2);
-INSERT INTO test(id, name, year, school_id) values (37, 'cotuca2018', 2018, 2);
-INSERT INTO test(id, name, year, school_id) values (38, 'cotuca2017', 2017, 2);
-INSERT INTO test(id, name, year, school_id) values (39, 'cotuca2016', 2016, 2);
+
 
 INSERT INTO question(id, topic, answer, images, options, subtitle, initial_text, text, number, test_id) values (2403, 'Português','B', '', '||A:que pode ser traduzida, em português, por “evento esportivo”.#@||B:usada em algumas modalidades esportivas.#@||C:criada em bares de jazz de Chicago.#@||D:que, em português, significa “porta que bate”.#@||E:característica de meios musicais, principalmente de jazz.#@', '', 'Leia o texto a seguir para responder às questões 1, 2, 3 e 4.  A palavra slam é uma onomatopeia da língua inglesa utilizada para indicar o som de uma “batida” de porta ou janela, seja esse movimento leve ou abrupto. Algo próximo do nosso “pá!” em língua portuguesa. A onomatopeia foi emprestada por Marc Kelly Smith, um trabalhador da construção civil e poeta, para nomear o Uptown Poetry Slam, evento poético que surgiu em Chicago, em 1984. O termo slam é utilizado para se referir às finais de torneios de baseball, tênis, bridge, basquete, por exemplo. Smith nomeou também slam os campeonatos de performances poéticas que organizava e no qual os slammers (poetas) eram avaliados com notas pelo público presente, inicialmente em um bar de jazz em Chicago, depois nas periferias da cidade. A iniciativa “viralizou”, como se diz hoje, contagiando outras cidades dos Estados Unidos e, mais tarde, ganhou o mundo. Poesia é o mundo.', 'De acordo com o texto, “slam” é uma palavra', '1', 71);
 INSERT INTO question(id, topic, answer, images, options, subtitle, initial_text, text, number, test_id) values (2404, 'Português','B', '', '||A:Nossa! Quanta cultura em uma só batida!#@||B:É possível fazer poesia a partir do coaxar de um sapo?#@||C:Futebol é uma palavra originada do inglês football.#@||D:Gostaria de conseguir deletar emoções que me fazem mal.#@||E:Viu o novo post que viralizou?#@', '', '', 'Pela leitura do texto, é possível compreender como funciona uma “onomatopeia”. Escolha a alternativa que melhor apresenta essa figura de linguagem na construção de uma palavra.', '2', 71);

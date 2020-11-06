@@ -18,7 +18,6 @@ public class School {
     private Integer id;
 
     @OneToMany(mappedBy = "school")
-    @JsonIgnore
     private List<Test> tests;
 
     @NonNull
@@ -26,4 +25,7 @@ public class School {
 
     @NonNull
     private String location;
+
+    @NonNull
+    private String schoolLogoUrl;
 }
