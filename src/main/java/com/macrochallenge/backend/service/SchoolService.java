@@ -37,5 +37,4 @@ public class SchoolService implements SchoolServiceInterface {
         return  schoolsAndTestHeadersDTOS;
     }
 
-    public
 }
