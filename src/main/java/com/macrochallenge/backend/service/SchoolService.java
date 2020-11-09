@@ -26,7 +26,8 @@ public class SchoolService implements SchoolServiceInterface {
             List<TestDTO> testDTOsForSchool = school.getTests().stream()
                     .map(test -> new TestDTO(test.getName(), test.getYear()))
                     .collect(Collectors.toList());
-            return new SchoolsAndTestHeadersDTO(school.getName(), school.getLocation(), school.getSchoolLogoUrl(), testDTOsForSchool);
+            return new SchoolsAndTestHeadersDTO(school.getName(), school.getLocation(), school.getSchoolLogoUrl(),
+                    testDTOsForSchool);
         }).collect(Collectors.toList());
 
         if (schoolsAndTestHeadersDTOS.isEmpty()) {
@@ -35,4 +36,6 @@ public class SchoolService implements SchoolServiceInterface {
 
         return  schoolsAndTestHeadersDTOS;
     }
+
+    public
 }
