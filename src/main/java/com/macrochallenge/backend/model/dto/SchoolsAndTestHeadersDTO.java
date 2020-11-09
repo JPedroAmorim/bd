@@ -14,5 +14,8 @@ public class SchoolsAndTestHeadersDTO {
     private String schoolLocation;
 
     @NonNull
+    private String schoolLogoUrl;
+
+    @NonNull
     private List<TestDTO> tests;
 }
