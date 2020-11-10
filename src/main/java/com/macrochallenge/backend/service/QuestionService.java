@@ -26,16 +26,18 @@ public class QuestionService {
             throw new NotFoundException("Escola não encontrada");
         }
 
-        School schoolForQuestion = schoolForQuestionsOptional.get();
-
         String topicDecoded = "";
 
-        if(topic.equals("cn")) {
-            topicDecoded = "Ciências Naturais";
-        } else if(topic.equals("m")) {
-            topicDecoded = "Matemática";
-        } else if(topic.equals("pt")) {
-            topicDecoded = "Português";
+        switch (topic) {
+            case "cn":
+                topicDecoded = "Ciências Naturais";
+                break;
+            case "m":
+                topicDecoded = "Matemática";
+                break;
+            case "pt":
+                topicDecoded = "Português";
+                break;
         }
 
         String finalTopicDecoded = topicDecoded;
@@ -45,6 +47,10 @@ public class QuestionService {
                 .flatMap(test -> test.getQuestions().stream())
                 .filter(question -> question.getTopic().equals(finalTopicDecoded))
                 .collect(Collectors.toList());
+
+        if (questionsForTopic.isEmpty()) {
+            throw new NotFoundException("Questões não encontradas");
+        }
 
         return questionsForTopic;
     }

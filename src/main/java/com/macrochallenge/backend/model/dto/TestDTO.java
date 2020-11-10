@@ -10,4 +10,10 @@ public class TestDTO {
 
     @NonNull
     private String testYear;
+
+    @NonNull
+    private String numberOfCorrectAnswersForLastResult = "-1";
+
+    @NonNull
+    private String totalNumberOfQuestionsForLastResult = "-1";
 }
