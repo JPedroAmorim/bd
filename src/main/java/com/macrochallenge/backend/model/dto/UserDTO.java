@@ -1,9 +1,11 @@
 package com.macrochallenge.backend.model.dto;
 
-import lombok.Data;
-import lombok.NonNull;
+import lombok.*;
 
-@Data
+@Getter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserDTO {
     @NonNull
     private String userId;

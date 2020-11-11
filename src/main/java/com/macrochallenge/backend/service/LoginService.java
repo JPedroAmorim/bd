@@ -34,8 +34,8 @@ public class LoginService {
 
         if (userOptional.isPresent()) {
             return new ExistsDTO("true");
-        } else {
-            return new ExistsDTO("false");
         }
+
+        return new ExistsDTO("false");
     }
 }

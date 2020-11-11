@@ -1,10 +1,13 @@
 package com.macrochallenge.backend.model.dto;
 
-import lombok.Data;
-import lombok.NonNull;
+import lombok.*;
 
-@Data
+@Getter
 public class ExistsDTO {
     @NonNull
-    private String exists;
+    private final String exists;
+
+    public ExistsDTO(@NonNull String exists) {
+        this.exists = exists;
+    }
 }

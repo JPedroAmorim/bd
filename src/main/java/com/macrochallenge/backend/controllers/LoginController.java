@@ -24,8 +24,8 @@ public class LoginController {
     }
 
     @GetMapping
-    public ExistsDTO checkUser(@RequestBody UserDTO userDTO) {
-        return loginService.checkUserExists(userDTO.getUserId());
+    public ExistsDTO checkUser(@RequestParam String userId) {
+        return loginService.checkUserExists(userId);
     }
 
 }
