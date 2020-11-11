@@ -20,13 +20,13 @@ public class ResultsController {
     }
 
     @PostMapping
-    public ResponseEntity<String> addNewResult(@RequestBody ResultsDTO resultsDTO) {
-        resultsService.addNewResult(resultsDTO);
+    public ResponseEntity<String> addNewResult(@RequestParam String userId, @RequestBody ResultsDTO resultsDTO) {
+        resultsService.addNewResult(resultsDTO, userId);
         return new ResponseEntity<>("Resultado gravado com sucesso", HttpStatus.OK);
     }
 
     @GetMapping("/accumulated-results")
-    public GeneralResultsDTO getAccumulatedResults() {
-        return resultsService.getAccumulatedResults();
+    public GeneralResultsDTO getAccumulatedResults(@RequestParam String userId) {
+        return resultsService.getAccumulatedResults(userId);
     }
 }

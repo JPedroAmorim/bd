@@ -4,6 +4,6 @@ import com.macrochallenge.backend.model.dto.GeneralResultsDTO;
 import com.macrochallenge.backend.model.dto.ResultsDTO;
 
 public interface ResultsServiceInterface {
-    public void addNewResult(ResultsDTO resultsDTO);
-    public GeneralResultsDTO getAccumulatedResults();
+    public void addNewResult(ResultsDTO resultsDTO, String userId);
+    public GeneralResultsDTO getAccumulatedResults(String userId);
 }

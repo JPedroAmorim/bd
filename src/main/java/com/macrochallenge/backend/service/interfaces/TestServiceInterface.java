@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface TestServiceInterface {
     public List<Question> getTestQuestions(TestDTO testDTO);
-    public TestResultDTO getTestResult(TestDTO testDTO);
+    public TestResultDTO getTestResult(TestDTO testDTO, String userId);
 }

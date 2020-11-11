@@ -1,6 +1,2 @@
 
-g
-java:S1854"ERemove this useless assignment to local variable "schoolForQuestion".(מ±ז®ûÿÿÿÿ8¾®צעÚ.
-X
-java:S1481"6Remove this unused "schoolForQuestion" local variable.(מ±ז®ûÿÿÿÿ8¾®צעÚ.
-C	java:S131!""Add a default case to this switch.(שˆ›רÿÿÿÿ8־ü×ףÚ.
+C	java:S131""Add a default case to this switch.(שˆ›רÿÿÿÿ8־ü×ףÚ.

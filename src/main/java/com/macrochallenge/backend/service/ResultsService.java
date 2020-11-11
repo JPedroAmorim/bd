@@ -5,6 +5,7 @@ import com.google.gson.reflect.TypeToken;
 import com.macrochallenge.backend.exceptions.NotFoundException;
 import com.macrochallenge.backend.model.Results;
 import com.macrochallenge.backend.model.ResultsPerTopic;
+import com.macrochallenge.backend.model.SystemUser;
 import com.macrochallenge.backend.model.Test;
 import com.macrochallenge.backend.model.dto.GeneralResultsDTO;
 import com.macrochallenge.backend.model.dto.ResultsDTO;
@@ -12,6 +13,7 @@ import com.macrochallenge.backend.model.dto.ResultsPerTopicDTO;
 import com.macrochallenge.backend.repositories.ResultsPerTopicRepository;
 import com.macrochallenge.backend.repositories.ResultsRepository;
 import com.macrochallenge.backend.repositories.TestRepository;
+import com.macrochallenge.backend.repositories.UserRepository;
 import com.macrochallenge.backend.service.interfaces.ResultsServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,18 +28,26 @@ public class ResultsService implements ResultsServiceInterface {
 
     private final TestRepository testRepository;
     private final ResultsRepository resultsRepository;
-    private final ResultsPerTopicRepository resultsPerTopicRepository;
+    private final UserRepository userRepository;
 
     @Autowired
     public ResultsService(TestRepository testRepository, ResultsRepository resultsRepository,
-                          ResultsPerTopicRepository resultsPerTopicRepository) {
+                          UserRepository userRepository) {
         this.testRepository = testRepository;
         this.resultsRepository = resultsRepository;
-        this.resultsPerTopicRepository = resultsPerTopicRepository;
+        this.userRepository = userRepository;
     }
 
     @Override
-    public void addNewResult(ResultsDTO resultsDTO) {
+    public void addNewResult(ResultsDTO resultsDTO, String userId) {
+        Optional<SystemUser> userOptional = userRepository.findById(userId);
+
+        if (!userOptional.isPresent()) {
+            throw new NotFoundException("Usuário não encontrado");
+        }
+
+        SystemUser userForResult = userOptional.get();
+
         Optional<Test> testForResultOptional = testRepository.findByNameAndYear(resultsDTO.getTestName(),
                 resultsDTO.getTestYear());
 
@@ -85,15 +95,24 @@ public class ResultsService implements ResultsServiceInterface {
             resultsPerTopicList.add(resultsPerTopic);
         }
 
-
         resultsEntity.getResultsPerTopics().addAll(resultsPerTopicList);
 
-        resultsRepository.save(resultsEntity);
+        userForResult.getResults().add(resultsEntity);
+
+        userRepository.save(userForResult);
     }
 
     @Override
-    public GeneralResultsDTO getAccumulatedResults() {
-        List<Results> allResults = resultsRepository.findAll();
+    public GeneralResultsDTO getAccumulatedResults(String userId) {
+        Optional<SystemUser> userOptional = userRepository.findById(userId);
+
+        if (!userOptional.isPresent()) {
+            throw new NotFoundException("Usuário não encontrado");
+        }
+
+        SystemUser userForResult = userOptional.get();
+
+        List<Results> allResults = userForResult.getResults();
 
         if(allResults.isEmpty()) {
             throw  new NotFoundException("Sem resultados encontrados");

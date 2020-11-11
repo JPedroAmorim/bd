@@ -29,7 +29,8 @@ public class TestController {
     }
 
     @GetMapping("/test-result")
-    public TestResultDTO getTestResult(@RequestParam String testName, @RequestParam String testYear) {
-        return testService.getTestResult(new TestDTO(testName, testYear));
+    public TestResultDTO getTestResult(@RequestParam String testName, @RequestParam String testYear,
+                                       @RequestParam String userId) {
+        return testService.getTestResult(new TestDTO(testName, testYear), userId);
     }
 }

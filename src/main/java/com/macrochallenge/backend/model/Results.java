@@ -19,7 +19,10 @@ public class Results {
     private Integer id;
 
     @ManyToOne
-    private Test test;
+   private Test test;
+
+    @ManyToOne
+    private SystemUser user;
 
     @OneToMany(mappedBy = "result", cascade = CascadeType.ALL)
     private List<ResultsPerTopic> resultsPerTopics = new ArrayList<>();
