@@ -97,6 +97,8 @@ public class ResultsService implements ResultsServiceInterface {
 
         resultsEntity.getResultsPerTopics().addAll(resultsPerTopicList);
 
+        resultsEntity.setUser(userForResult);
+
         userForResult.getResults().add(resultsEntity);
 
         userRepository.save(userForResult);
