@@ -5,5 +5,5 @@ import com.macrochallenge.backend.model.dto.SchoolsAndTestHeadersDTO;
 import java.util.List;
 
 public interface SchoolServiceInterface {
-    public List<SchoolsAndTestHeadersDTO> getSchools();
+    public List<SchoolsAndTestHeadersDTO> getSchools(String userId);
 }

@@ -23,7 +23,7 @@ public class SchoolController {
     }
 
     @GetMapping
-    public List<SchoolsAndTestHeadersDTO> getSchoolAndTestHeaders() {
-        return schoolService.getSchools();
+    public List<SchoolsAndTestHeadersDTO> getSchoolAndTestHeaders(@RequestParam String userId) {
+        return schoolService.getSchools(userId);
     }
 }
