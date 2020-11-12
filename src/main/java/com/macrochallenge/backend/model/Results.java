@@ -21,6 +21,8 @@ public class Results {
     @ManyToOne
    private Test test;
 
+    //
+
     @ManyToOne
     private SystemUser user;
 
