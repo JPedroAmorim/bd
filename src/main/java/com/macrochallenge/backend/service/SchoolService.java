@@ -28,25 +28,28 @@ public class SchoolService implements SchoolServiceInterface {
         this.userRepository = userRepository;
         this.resultRepository = resultRepository;
     }
-// List<TestDTO> testDTOsForSchools = school.getTests().stream().map(test -> new TestDTO(test.getName(), test.getYear())).collect(Collectors.toList());
+
     @Override
     public List<SchoolsAndTestHeadersDTO> getSchools(String userId) {
-        Optional<SystemUser> userOptional = userRepository.findById(userId);
+        Optional<SystemUser> userOptional = Optional.empty();
 
-        if (!userOptional.isPresent()) {
-            throw new NotFoundException("Usuário não encontrado");
+        if (!userId.equals("-1")) {
+             userOptional = userRepository.findById(userId);
+
+            if (!userOptional.isPresent()) {
+                throw new NotFoundException("Usuário não encontrado");
+            }
         }
 
-        SystemUser userForResult = userOptional.get();
-
-
+        Optional<SystemUser> finalUserOptional = userOptional;
         List<SchoolsAndTestHeadersDTO> schoolsAndTestHeadersDTOS = schoolRepository.findAll().stream().map(school -> {
-
             List<TestDTO> testDTOsForSchool = school.getTests().stream()
                     .map(test -> {
-                        if(test.getResults().isEmpty()) {
+                        if(test.getResults().isEmpty() || userId.equals("-1")) {
                             return new TestDTO(test.getName(), test.getYear());
                         }
+
+                        SystemUser userForResult = finalUserOptional.get();
 
                         List<Results> resultsForUser = test.getResults().stream()
                                 .filter(results -> results.getUser().equals(userForResult))
@@ -63,7 +66,7 @@ public class SchoolService implements SchoolServiceInterface {
                     })
                     .collect(Collectors.toList());
 
-            
+
             return new SchoolsAndTestHeadersDTO(school.getName(), school.getLocation(), school.getSchoolLogoUrl(),
                     testDTOsForSchool);
         }).collect(Collectors.toList());
