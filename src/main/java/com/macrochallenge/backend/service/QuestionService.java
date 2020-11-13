@@ -30,29 +30,29 @@ public class QuestionService {
 
         switch (topic) {
 
-                case "Português":
-                    topicDecoded = "pt";
+                case "pt":
+                    topicDecoded = "Português";
                     break;
-                case "Matemática":
-                    topicDecoded = "m";
+                case "m":
+                    topicDecoded = "Matemática";
                     break;
-                case "Ciências Naturais":
-                    topicDecoded = "cn";
+                case "cn":
+                    topicDecoded = "Ciências Naturais";
                     break;
-                case "Química":
-                    topicDecoded = "q";
+                case "q":
+                    topicDecoded = "Química";
                     break;
-                case "História":
-                    topicDecoded = "h";
+                case "h":
+                    topicDecoded = "História";
                     break;
-                case "Biologia":
-                    topicDecoded = "b";
+                case "b":
+                    topicDecoded = "Biologia";
                     break;
-                case "Geografia":
-                    topicDecoded = "g";
+                case "g":
+                    topicDecoded = "Geografia";
                     break;
-                case "Física":
-                    topicDecoded = "f";
+                case "f":
+                    topicDecoded = "Física";
                     break;
                 default:
                     topicDecoded = "";

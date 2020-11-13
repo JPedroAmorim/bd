@@ -27,7 +27,7 @@ public class Question {
     private String text;
 
     @NonNull
-    @Column(length = 2000)
+    @Column(length = 4500)
     private String initialText;
 
     @Nullable
@@ -37,6 +37,7 @@ public class Question {
     private String images; // URL das imagens
 
     @Nullable
+    @Column(length = 4500)
     private String subtitle;
 
     @Nullable
@@ -47,5 +48,6 @@ public class Question {
     private String options;
 
     @NonNull
+    @Column(length = 4500)
     private String answer;
 }
