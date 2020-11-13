@@ -29,15 +29,34 @@ public class QuestionService {
         String topicDecoded = "";
 
         switch (topic) {
-            case "cn":
-                topicDecoded = "Ciências Naturais";
-                break;
-            case "m":
-                topicDecoded = "Matemática";
-                break;
-            case "pt":
-                topicDecoded = "Português";
-                break;
+
+                case "Português":
+                    topicDecoded = "pt";
+                    break;
+                case "Matemática":
+                    topicDecoded = "m";
+                    break;
+                case "Ciências Naturais":
+                    topicDecoded = "cn";
+                    break;
+                case "Química":
+                    topicDecoded = "q";
+                    break;
+                case "História":
+                    topicDecoded = "h";
+                    break;
+                case "Biologia":
+                    topicDecoded = "b";
+                    break;
+                case "Geografia":
+                    topicDecoded = "g";
+                    break;
+                case "Física":
+                    topicDecoded = "f";
+                    break;
+                default:
+                    topicDecoded = "";
+                    break;
         }
 
         String finalTopicDecoded = topicDecoded;
