@@ -1,8 +1,8 @@
 
 INSERT INTO school(id, location, name, school_logo_url) values (2,'Campinas (SP)', 'Cotuca', 'https://i.imgur.com/XvmtJlL.png');
 INSERT INTO test(id, name, year, school_id) values (71, 'cotuca2020', 2020, 2);
-INSERT INTO test(id, name, year, school_id) values (74, 'cotuca2019', 2020, 2);
-INSERT INTO test(id, name, year, school_id) values (75, 'cotuca2018', 2020, 2);
+INSERT INTO test(id, name, year, school_id) values (74, 'cotuca2019', 2019, 2);
+INSERT INTO test(id, name, year, school_id) values (75, 'cotuca2018', 2018, 2);
 
 INSERT INTO school(id, location, name, school_logo_url) values (1, 'Limeira (SP)', 'Cotil', 'https://i.imgur.com/cYZACWj.png');
 INSERT INTO test(id, name, year, school_id) values (77, 'cotil2020', 2020, 1);
