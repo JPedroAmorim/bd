@@ -1,9 +1,9 @@
 
-W
-java:S1068"5Remove this unused "resultsRepository" private field.(ÂÎ…´úÿÿÿÿ8‰ÿŞÃÛ.
-V
-java:S1854"8Remove this useless assignment to local variable "size".(ŸÑş8×ªÜ¶Ø.
-G
-java:S1481")Remove this unused "size" local variable.(ŸÑş8×ªÜ¶Ø.
 z
 java:S1128"^Remove this unused import 'com.macrochallenge.backend.repositories.ResultsPerTopicRepository'.(­ëI8â«»ÃÛ.
+G
+java:S1481")Remove this unused "size" local variable.(ŸÑş8×ªÜ¶Ø.
+V
+java:S1854"8Remove this useless assignment to local variable "size".(ŸÑş8×ªÜ¶Ø.
+W
+java:S1068"5Remove this unused "resultsRepository" private field.(ÂÎ…´úÿÿÿÿ8‰ÿŞÃÛ.
